@@ -61,7 +61,7 @@ Por facilidade, o programa pode ser executado em três "modos" diferentes, a dep
 
 | Arquivo de Entrada | Deve ser adicionado? |
 | ------------------ | -------------------- |
-| Planilha Base      | **Não**              |
+| Planilha Base      | Não                  |
 | Extrato CC         | Sim                  |
 | Relatório(s)       | Sim (pelo menos um)  |
 
