@@ -27,7 +27,7 @@ Baixado o programa, você pode colocar o arquivo `.exe` onde achar melhor.
 
 Feito isso, clique no arquivo `.exe` para abrir o programa.
 
-![Tela inicial](assets/tutorial/exe_in_downloads.png)
+![Arquivo .exe](assets/tutorial/exe_in_downloads.png)
 
 > [!Warning]
 > É possível que o *Windows Defender* acuse o programa como "software perigoso". Neste caso, para executá-lo, você deve clicar em `Mais Informações` e, depois, no botão `Executar assim mesmo`.
