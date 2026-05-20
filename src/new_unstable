@@ -297,7 +297,10 @@ def criar_folha_de_rosto(wb, ws, linha_header):
 
     info = obter_info_tabela(ws, linha_header)
     mapa = info["mapa"]
-    
+
+    standard_font = Font(name='Arial', size=10)
+    bold_font = Font(name='Arial', bold=True, size=10)
+
     # =========================================================
     # MATRIZ DINÂMICA
     # =========================================================
@@ -325,6 +328,10 @@ def criar_folha_de_rosto(wb, ws, linha_header):
     capa = wb.create_sheet(title="Folha de Rosto", index=1)
     capa.sheet_view.showGridLines = False
 
+    for row in capa["A1:K47"]:
+        for cell in row:
+            cell.font = standard_font
+    
     for row in capa.iter_rows():
         for cell in row:
             cell.border = no_border
@@ -334,8 +341,8 @@ def criar_folha_de_rosto(wb, ws, linha_header):
 
     if os.path.exists(caminho_header):
         img_h = Image(caminho_header)
-        img_h.width = cm_para_px(25.4)
-        img_h.height = cm_para_px(6.91)
+        img_h.height = cm_para_px(5.93)
+        img_h.width = cm_para_px(20.91)
         capa.add_image(img_h, "A1")
 
     else:
@@ -348,9 +355,9 @@ def criar_folha_de_rosto(wb, ws, linha_header):
 
     if os.path.exists(caminho_bottom):
         img_b = Image(caminho_bottom)
-        img_b.width = cm_para_px(25.35)
-        img_b.height = cm_para_px(5)
-        capa.add_image(img_b, "A46")
+        img_b.height = cm_para_px(4.11)
+        img_b.width = cm_para_px(20.93)
+        capa.add_image(img_b, "A51")
 
     else:
         QMessageBox.warning(window,
@@ -358,41 +365,39 @@ def criar_folha_de_rosto(wb, ws, linha_header):
             "O rodapé da folha de rosto não foi localizado."
         )
 
-    bold = Font(bold=True)
-
     # =========================================================
     # CAMPOS FIXOS
     # =========================================================
 
-    capa["Q6"] = "LOC"
+    capa["N6"] = "LOC"
 
     # Primeira linha de dados
-    capa["P6"] = linha_header + 1
+    capa["M6"] = linha_header + 1
 
-    capa["D21"] = "Instituição Executora:"
-    capa["D22"] = "CNPJ:"
-    capa["D23"] = "Termo de Parceria:"
-    capa["D24"] = "Projeto:"
-    capa["D25"] = "PC:"
+    capa["C17"] = "Instituição Executora:"
+    capa["C18"] = "CNPJ:"
+    capa["C19"] = "Termo de Parceria:"
+    capa["C20"] = "Projeto:"
+    capa["C24"] = "PC:"
 
-    capa["G21"] = "Instituto Hardware Br - HBR"
-    capa["G22"] = "09.429.074/0001-12"
-    capa["G25"] = entry_pc.text()
+    capa["F17"] = "Instituto Hardware Br - HBR"
+    capa["F18"] = "09.429.074/0001-12"
+    capa["F24"] = entry_pc.text()
 
     # =========================================================
     # TABELA
     # =========================================================
 
-    capa["C32"] = "Natureza do Dispêndio"
-    capa["C33"] = "Favorecido"
-    capa["H33"] = "CNPJ OU CPF"
-    capa["J33"] = "Nº Extrato"
-    capa["C35"] = "NF/ND"
-    capa["E35"] = "Data de emissão da NF/ND"
-    capa["H35"] = "Data do pagamento"
-    capa["J35"] = "Valor"
+    capa["B29"] = "Natureza do Dispêndio"
+    capa["B32"] = "Favorecido"
+    capa["F32"] = "CNPJ OU CPF"
+    capa["I32"] = "Nº Extrato"
+    capa["B35"] = "NF/ND"
+    capa["C35"] = "Data de emissão da NF/ND"
+    capa["F35"] = "Data do pagamento"
+    capa["I35"] = "Valor"
 
-    capa["C32"].font = bold
+    capa["B29"].font = bold_font
 
     # =========================================================
     # FÓRMULAS
@@ -405,44 +410,44 @@ def criar_folha_de_rosto(wb, ws, linha_header):
     #
     # =========================================================
 
-    capa["Q12"] = (
-        f'=VLOOKUP(P6,{MATRIZ_REF},'
+    capa["N12"] = (
+        f'=VLOOKUP(M6,{MATRIZ_REF},'
         f'{indice_coluna_vlookup(mapa, "RESUMO DO GASTO")},FALSE)'
     )
-    capa["F32"] = (
-        f'=VLOOKUP(P6,{MATRIZ_REF},'
+    capa["E29"] = (
+        f'=VLOOKUP(M6,{MATRIZ_REF},'
         f'{indice_coluna_vlookup(mapa, "RUBRICA")},FALSE)'
     )
-    capa["C34"] = (
-        f'=VLOOKUP(P6,{MATRIZ_REF},'
+    capa["B33"] = (
+        f'=VLOOKUP(M6,{MATRIZ_REF},'
         f'{indice_coluna_vlookup(mapa, "FORNECEDOR")},FALSE)'
     )
-    capa["H34"] = (
-        f'=VLOOKUP(P6,{MATRIZ_REF},'
+    capa["F33"] = (
+        f'=VLOOKUP(M6,{MATRIZ_REF},'
         f'{indice_coluna_vlookup(mapa, "CNPJ OU CPF")},FALSE)'
     )
-    capa["J34"] = (
-        f'=VLOOKUP(P6,{MATRIZ_REF},'
+    capa["I33"] = (
+        f'=VLOOKUP(M6,{MATRIZ_REF},'
         f'{indice_coluna_vlookup(mapa, "Nº EXTRATO")},FALSE)'
     )
-    capa["J34"].number_format = '#,##0'
-    capa["C36"] = (
-        f'=VLOOKUP(P6,{MATRIZ_REF},'
+    capa["I33"].number_format = '#,##0'
+    capa["B36"] = (
+        f'=VLOOKUP(M6,{MATRIZ_REF},'
         f'{indice_coluna_vlookup(mapa, "(número) NF/RECIBO")},FALSE)'
     )
-    capa["E36"] = (
-        f'=VLOOKUP(P6,{MATRIZ_REF},'
+    capa["C36"] = (
+        f'=VLOOKUP(M6,{MATRIZ_REF},'
         f'{indice_coluna_vlookup(mapa, "DATA DA NF")})'
     )
-    capa["H36"] = (
-        f'=VLOOKUP(P6,{MATRIZ_REF},'
+    capa["F36"] = (
+        f'=VLOOKUP(M6,{MATRIZ_REF},'
         f'{indice_coluna_vlookup(mapa, "DATA DO PAGAMENTO")})'
     )
-    capa["J36"] = (
-        f'=VLOOKUP(P6,{MATRIZ_REF},'
+    capa["I36"] = (
+        f'=VLOOKUP(M6,{MATRIZ_REF},'
         f'{indice_coluna_vlookup(mapa, "VALOR PAGO")},FALSE)'
     )
-    capa["J36"].number_format = 'R$ #,##0.00'
+    capa["I36"].number_format = 'R$ #,##0.00'
 
     # =========================================================
     # MERGES
@@ -451,112 +456,119 @@ def criar_folha_de_rosto(wb, ws, linha_header):
     def merge(ws, cells):
         ws.merge_cells(cells)
 
-    merge(capa, "D21:F21")
-    merge(capa, "G21:I21")
+    merge(capa, "C17:E17")
+    merge(capa, "F17:H17")
 
-    merge(capa, "D22:F22")
-    merge(capa, "G22:I22")
+    merge(capa, "C18:E18")
+    merge(capa, "F18:H18")
 
-    merge(capa, "D23:F23")
-    merge(capa, "G23:I23")
+    merge(capa, "C19:E19")
+    merge(capa, "F19:H19")
 
-    merge(capa, "D24:F24")
-    merge(capa, "G24:L24")
+    merge(capa, "C20:E23")
+    merge(capa, "F20:I23")
 
-    merge(capa, "D25:F25")
-    merge(capa, "G25:I25")
+    merge(capa, "C24:E24")
+    merge(capa, "F24:H24")
 
-    merge(capa, "C32:E32")
-    merge(capa, "F32:L32")
+    merge(capa, "B29:D31")
+    merge(capa, "E29:J31")
 
-    merge(capa, "C33:G33")
-    merge(capa, "H33:I33")
-    merge(capa, "J33:L33")
+    merge(capa, "B32:E32")
+    merge(capa, "F32:H32")
+    merge(capa, "I32:J32")
 
-    merge(capa, "C34:G34")
-    merge(capa, "H34:I34")
-    merge(capa, "J34:L34")
+    merge(capa, "B33:E34")
+    merge(capa, "F33:H34")
+    merge(capa, "I33:J34")
 
-    merge(capa, "C35:D35")
-    merge(capa, "E35:G35")
-    merge(capa, "H35:I35")
-    merge(capa, "J35:L35")
+    merge(capa, "C35:E35")
+    merge(capa, "F35:H35")
+    merge(capa, "I35:J35")
 
-    merge(capa, "C36:D36")
-    merge(capa, "E36:G36")
-    merge(capa, "H36:I36")
-    merge(capa, "J36:L36")
+    merge(capa, "C36:E36")
+    merge(capa, "F36:H36")
+    merge(capa, "I36:J36")
 
     # =========================================================
     # ESTILOS
     # =========================================================
 
-    for c in ["D21", "D22", "D23", "D25"]:
-        capa[c].font = bold
+    for c in ["C17", "C18", "C19", "C24"]:
+        capa[c].font = bold_font
         capa[c].alignment = Alignment(
             horizontal="right",
             wrap_text=True
         )
 
-    style_range(capa, "C32:E32", thick, gray, center)
-    style_range(capa, "F32:L32", thick, None, center)
+    style_range(capa, "B29:D31", thick, gray, center)
+    style_range(capa, "E29:J31", thick, None, center)
 
-    style_range(capa, "C33:G33", thick, gray, center)
-    style_range(capa, "H33:I33", thick, gray, center)
-    style_range(capa, "J33:L33", thick, gray, center)
+    style_range(capa, "B32:E32", thick, gray, center)
+    style_range(capa, "F32:H32", thick, gray, center)
+    style_range(capa, "I32:J32", thick, gray, center)
 
-    style_range(capa, "C34:G34", thick, None, center)
-    style_range(capa, "H34:I34", thick, None, center)
-    style_range(capa, "J34:L34", thick, None, center)
+    style_range(capa, "B33:E34", thick, None, center)
+    style_range(capa, "F33:H34", thick, None, center)
+    style_range(capa, "I33:J34", thick, None, center)
 
-    style_range(capa, "C35:D35", thick, gray, center)
-    style_range(capa, "E35:G35", thick, gray, center)
-    style_range(capa, "H35:I35", thick, gray, center)
-    style_range(capa, "J35:L35", thick, gray, center)
+    style_range(capa, "B35:B35", thick, gray, center)
+    style_range(capa, "C35:E35", thick, gray, center)
+    style_range(capa, "F35:H35", thick, gray, center)
+    style_range(capa, "I35:J35", thick, gray, center)
 
-    style_range(capa, "C36:D36", thick, None, center)
-    style_range(capa, "E36:G36", thick, None, center)
-    style_range(capa, "H36:I36", thick, None, center)
-    style_range(capa, "J36:L36", thick, None, center)
+    style_range(capa, "B36:B36", thick, None, center)
+    style_range(capa, "C36:E36", thick, None, center)
+    style_range(capa, "F36:H36", thick, None, center)
+    style_range(capa, "I36:J36", thick, None, center)
 
-    for r in range(21, 26):
+    for r in range(17, 25):
 
         capa.cell(
             row=r,
-            column=6
+            column=5
         ).border = Border(
             right=Side(style='thick')
         )
 
         capa.cell(
             row=r,
-            column=7
+            column=6
         ).border = Border(
             left=Side(style='thick')
         )
 
-    capa.row_dimensions[24].height = 42
-    capa.row_dimensions[32].height = 46.5
-    capa.row_dimensions[34].height = 31.2
+    capa["C20"].alignment = Alignment(horizontal="right", vertical="top")
+    capa["C20"].font = bold_font
+    capa["F20"].alignment = Alignment(vertical="top")
 
-    capa["D24"].alignment = Alignment(horizontal="right", vertical="top")
-    capa["D24"].font = bold
-    capa["G24"].alignment = Alignment(vertical="top")
-
-    capa["F32"].alignment = Alignment(
+    capa["E29"].alignment = Alignment(
         wrap_text=True,
         horizontal="center",
         vertical="center"
     )
 
-    capa["C34"].alignment = Alignment(
+    capa["B33"].alignment = Alignment(
         wrap_text=True,
         horizontal="center",
         vertical="center"
     )
 
-    for cell in ["E36", "H36"]:
+    for cell in ["C36", "F36"]:
         capa[cell].number_format = 'dd/mm/yyyy'
+
+    # Configurações de impressão
+
+    ws.print_area = "A1:K47"
+    
+    capa.page_setup.orientation = "portrait"
+    capa.page_setup.paperSize = capa.PAPERSIZE_A4
+    capa.page_margins.top = 0
+    capa.page_margins.bottom = 0
+    capa.page_margins.left = 0
+    capa.page_margins.right = 0
+
+    capa.print_options.horizontalCentered = True
 
 def detectar_ultima_linha(ws, mapa, linha_inicio):
 
@@ -745,14 +757,14 @@ def selecionar_base():
 
 def selecionar_extrato():
     global extrato_file
-    extrato_file, _ = QFileDialog.getOpenFileName(window, "Selecionar arquivo", "", "Excel Files (*.xlsx)")
+    extrato_file, _ = QFileDialog.getOpenFileName(window, "Selecionar arquivo", "", "Excel Files (*.xlsx *.xls)")
     if extrato_file:
         label_extrato.setText(os.path.basename(extrato_file))
     atualizar_status()
 
 def selecionar_reports():
     global report_files
-    report_files, _ = QFileDialog.getOpenFileNames(window, "Selecionar arquivo", "", "Excel Files (*.xlsx, *.xls)")
+    report_files, _ = QFileDialog.getOpenFileNames(window, "Selecionar arquivo", "", "Excel Files (*.xlsx)")
     if report_files:
         label_reports.setText(f"{len(report_files)} arquivos carregados")
     atualizar_status()
@@ -796,7 +808,7 @@ def gerar_planilha():
 
             QMessageBox.information(window, "Pronto", "Folha de rosto adicionada!")
 
-            path = QFileDialog.getSaveFileName(window, "Escolha onde salvar o arquivo", "", "Excel Files (*.xlsx)")
+            path, _ = QFileDialog.getSaveFileName(window, "Escolha onde salvar o arquivo", "", "Excel Files (*.xlsx)")
 
             if not path:
                 return
@@ -1028,7 +1040,7 @@ def gerar_planilha():
 def salvar_arquivo(df):
     global base_file
 
-    path = QFileDialog.getSaveFileName(window, "Escolha onde salvar o arquivo", "", "Excel Files (*.xlsx)")
+    path, _ = QFileDialog.getSaveFileName(window, "Escolha onde salvar o arquivo", "", "Excel Files (*.xlsx)")
 
     if not path:
         return
@@ -1365,7 +1377,7 @@ window = QWidget()
 
 window.setWindowTitle("SmartPC")
 window.setWindowIcon(
-    QIcon(resource_path("hbr_pc_assist.ico"))
+    QIcon(resource_path("smartpc.ico"))
 )
 
 window.resize(960, 540)
@@ -1685,7 +1697,7 @@ card_layout.addWidget(
 
 card_layout.addWidget(
     criar_bloco(
-        "Relatórios",
+        "Relatório(s)",
         selecionar_reports,
         remover_reports,
         label_reports
@@ -1821,7 +1833,7 @@ github_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
 github_label.setText(
     '<a href="https://github.com/imbaTIMvel/juntapdf">'
-    'JuntaPDF v0.1.0 - GitHub'
+    'SmartPC v0.1.0 - GitHub'
     '</a>'
 )
 
