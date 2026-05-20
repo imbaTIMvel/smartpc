@@ -27,18 +27,18 @@ Baixado o programa, você pode colocar o arquivo `.exe` onde achar melhor.
 
 Feito isso, clique no arquivo `.exe` para abrir o programa.
 
-![Tela inicial](assets/images/exe_in_downloads.png)
+![Tela inicial](assets/tutorial/exe_in_downloads.png)
 
 > [!Warning]
 > É possível que o *Windows Defender* acuse o programa como "software perigoso". Neste caso, para executá-lo, você deve clicar em `Mais Informações` e, depois, no botão `Executar assim mesmo`.
 
-![Windows Defender acusando o programa](assets/images/windows_defender_01.png)
+![Windows Defender acusando o programa](assets/tutorial/windows_defender_01.png)
 
-![Executar assim mesmo](assets/images/windows_defender_02.png)
+![Executar assim mesmo](assets/tutorial/windows_defender_02.png)
 
 ### 2.3 Interface do Programa
 
-![Interface do programa - superior](assets/images/ui_01.png)
+![Interface do programa - superior](assets/tutorial/ui_01.png)
 
 #### 2.3.1 Campos de Arquivos
 
@@ -52,21 +52,23 @@ O programa possui três campos para inserção de arquivos (planilhas Excel) de 
 
 Para cada um dos campos, há dois botões: `Selecionar` e `Remover`. Ao clicar em `Selecionar`, o programa abre um diálogo do *Explorador de Arquivos*, permitindo que o usuário selecione o arquivo Excel correspondente ao campo (mais de um arquivo, se forem Relatórios).
 
-![Diálogo de seleção de arquivo](assets/images/file_select_01.png)
+![Seleção de arquivo](assets/tutorial/file_select_01.png)
+
+![Diálogo de seleção de arquivo](assets/tutorial/file_select_01.png)
 
 Após selecionar o(s) arquivo(s), o campo de arquivo inserido é atualizado.
 
-![Interface com arquivos selecionados](assets/images/file_select_02.png)
+![Interface com arquivos selecionados](assets/tutorial/file_select_02.png)
 
 Ao clicar em `Remover`, se houver arquivo(s) selecionado(s) no campo correspondente, o programa remove o arquivo selecionado, deixando o campo vazio.
 
-![Remoção de arquivo](assets/images/file_removal_01.png)
+![Remoção de arquivo](assets/tutorial/file_removal_01.png)
 
-![Interface sem arquivos selecionados](assets/images/file_removal_02.png)
+![Interface sem arquivos selecionados](assets/tutorial/file_removal_02.png)
 
 #### 2.3.2 Demais Recursos
 
-![Interface do programa - superior](assets/images/ui_02.png)
+![Interface do programa - superior](assets/tutorial/ui_02.png)
 
 Além disso, o programa possui:
 - `Título PC`: Uma **caixa de texto** para inserir o título da Prestação de Contas (PC) que será usado para preencher a coluna "PC" na planilha de saída e a célula associada à "PC:" na folha de rosto;
@@ -108,11 +110,11 @@ Para associar adequadamente as informações entre o Extrato CC e o(s) Relatóri
 > [!Note]
 > Com os arquivos de entrada inseridos, ao clicar no botão `Gerar Planilha`, o programa deve fazer as correspondências entre o Extrato CC e o(s) Relatório(s), gerando uma planilha de saída (com folha de rosto) e permitindo que o usuário escolha o local de salvamento do arquivo após o processamento.
 
-![Gerando a planilha](assets/images/create_sheet_01.png)
+![Gerando a planilha](assets/tutorial/create_sheet_01.png)
 
-![Caixa de aviso](assets/images/create_sheet_02.png)
+![Caixa de aviso](assets/tutorial/create_sheet_02.png)
 
-![Salvando o arquivo](assets/images/create_sheet_03.png)
+![Salvando o arquivo](assets/tutorial/create_sheet_03.png)
 
 #### 2.4.2 Emenda de Planilhas
 
@@ -127,11 +129,11 @@ Inserindo uma Planilha Base (no formato [standard_sheet](assets/standard_sheet/s
 > [!Note]
 > Com os arquivos de entrada inseridos, ao clicar no botão `Gerar Planilha`, o programa deve fazer as correspondências entre o Extrato CC e o(s) Relatório(s) e emendar os dados novos à Planilha Base, gerando uma planilha de saída (com folha de rosto) e permitindo que o usuário escolha o local de salvamento do arquivo após o processamento.
 
-![Gerando a planilha](assets/images/splice_sheet_01.png)
+![Gerando a planilha](assets/tutorial/splice_sheet_01.png)
 
-![Caixa de aviso](assets/images/splice_sheet_02.png)
+![Caixa de aviso](assets/tutorial/splice_sheet_02.png)
 
-![Salvando o arquivo](assets/images/splice_sheet_03.png)
+![Salvando o arquivo](assets/tutorial/splice_sheet_03.png)
 
 #### 2.4.3 Adição de Folha de Rosto
 
@@ -146,11 +148,11 @@ Inserindo apenas uma Planilha Base (no formato [standard_sheet](assets/standard_
 > [!Note]
 > Com os arquivos de entrada inseridos, ao clicar no botão `Gerar Planilha`, o programa deve adicionar uma folha de rosto à Planilha Base, gerando uma planilha de saída (com folha de rosto e dados preservados) e permitindo que o usuário escolha o local de salvamento do arquivo após o processamento.
 
-![Gerando a planilha](assets/images/add_face_01.png)
+![Gerando a planilha](assets/tutorial/add_face_01.png)
 
-![Caixa de aviso](assets/images/add_face_02.png)
+![Caixa de aviso](assets/tutorial/add_face_02.png)
 
-![Salvando o arquivo](assets/images/add_face_03.png)
+![Salvando o arquivo](assets/tutorial/add_face_03.png)
 
 ## 3. Releases
 
