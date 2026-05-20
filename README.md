@@ -40,15 +40,31 @@ Feito isso, clique no arquivo .exe para abrir o programa.
 
 ![Interface do programa - superior](assets/images/ui_01.png)
 
-O programa possui três campos para inserção de arquivos de entrada. São eles:
+#### 2.3.1 Campos de Arquivos
 
-| Campo         | Extensões de arquivo aceitas | Aceita mais de um arquivo? |
-| ------------- | ---------------------------- | -------------------------- |
-| Planilha Base | .xlsx                        | Não                        |
-| Extrato CC    | .xlsx e .xls                 | Não                        |
-| Relatório(s)  | .xlsx                        | Sim                        |
+O programa possui três campos para inserção de arquivos (planilhas Excel) de entrada. São eles:
 
-Para cada um dos campos, 
+| Campo         | Extensões de arquivo aceitas | Padronização do arquivo                                           | Aceita mais de um arquivo? |
+| ------------- | ---------------------------- | ----------------------------------------------------------------- | -------------------------- |
+| Planilha Base | .xlsx                        | [template_sheet](assets/template_sheet/template_sheet.xlsx)       | Não                        |
+| Extrato CC    | .xlsx e .xls                 | Extratos CC do Itaú ou do Banco BRB                               | Não                        |
+| Relatório(s)  | .xlsx                        | Relatórios de Pagamentos e/ou Recebimentos, retirados do Octalink | Sim                        |
+
+Para cada um dos campos, há dois botões: `Selecionar` e `Remover`. Ao clicar em `Selecionar`, o programa abre um diálogo do *Explorador de Arquivos*, permitindo que o usuário selecione o arquivo Excel correspondente ao campo (mais de um arquivo, se forem Relatórios).
+
+![Diálogo de seleção de arquivo](assets/images/file_select_01.png)
+
+Após selecionar o(s) arquivo(s), o campo de arquivo inserido é atualizado.
+
+![Interface com arquivos selecionados](assets/images/file_select_02.png)
+
+Ao clicar em `Remover`, se houver arquivo(s) selecionado(s) no campo correspondente, o programa remove o arquivo selecionado, deixando o campo vazio.
+
+![Remoção de arquivo](assets/images/file_removal_01.png)
+
+![Interface sem arquivos selecionados](assets/images/file_removal_02.png)
+
+#### 2.3.2 Demais Recursos
 
 ![Interface do programa - superior](assets/images/ui_02.png)
 
@@ -69,7 +85,19 @@ Por convenção, o programa pode ser executado em três "modos" diferentes, a de
 | Extrato CC         | Sim                  |
 | Relatório(s)       | Sim (pelo menos um)  |
 
+Inserindo um Extrato CC (do Itaú ou do Banco BRB) e ao menos um Relatório (de Pagamentos ou Recebimentos, do Octalink), ao clicar em `Gerar Planilha`, o programa deve gerar uma planilha no formato [template_sheet](assets/template_sheet/template_sheet.xlsx), com as colunas:
+- `Nº`: Contagem do item da planilha gerada, serve como referência para o espelhamento de dados na folha de rosto;
+- `RESUMO DO GASTO`: Preenchido com "-", deve ser preenchido posteriormente pelo usuário (operador);
+- `RUBRICA`: Retirado da coluna "Rubrica" do(s) Relatório(s) do Octalink;
+- `FORNECEDOR`: Retirado da coluna "Razão Social" do(s) Relatórios do Octalink;
+- `PC`: Texto inserido na caixa de texto "Título PC" do programa;
+- `CNPJ ou CPF`: Retirado da coluna "CPF/CNPJ" do(s) Relatórios do Octalink;
+- `DATA DA NF`: Retirado da coluna "Emissão" do(s) Relatórios do Octalink;
+- `(número) NF/RECIBO`: Retirado da coluna "Nº Documento" do(s) Relatórios do Octalink;
+- `Nº EXTRATO`: Retirado da coluna "Numero Documento" ou "DOC" do Extrato CC;
+- `DATA DO PAGAMENTO`: Retirado da coluna "Data" ou "DATA" do Extrato CC. Deve bater com a coluna "Vencimento/Mov." 
 
+Para associar adequadamente as informações entre o Extrato CC e o(s) Relatório(s), o programa procura por correspondências de **valor** e **data**, recorrendo a desempate por **histórico** (como fallback) em casos de múltiplas ocorrências. Em caso de múltiplas correspondências (sem possibilidade de tratamento por **histórico**) ou nenhuma correspondência, o programa reporta os erros na coluna `EXCEÇÕES DO ALGORITMO`.
 
 [...]
 
