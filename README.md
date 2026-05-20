@@ -48,14 +48,18 @@ O programa possui três campos para inserção de arquivos de entrada. São eles
 | Extrato CC    | .xlsx e .xls                 | Não                        |
 | Relatório(s)  | .xlsx                        | Sim                        |
 
+Para cada um dos campos, 
+
 ![Interface do programa - superior](assets/images/ui_02.png)
 
 Além disso, o programa possui:
-- Uma caixa de texto para inserir o título da Prestação de Contas (PC) que será usado para preencher a coluna "PC" na planilha de saída e 
+- `Título PC`: Uma **caixa de texto** para inserir o título da Prestação de Contas (PC) que será usado para preencher a coluna "PC" na planilha de saída e a célula associada à "PC:" na folha de rosto;
+- `Abrir planilha quando estiver pronta`: Um **toggle switch** que permite que o usuário defina se a planilha de saída será aberta ou não após a execução do programa;
+- `Gerar Planilha`: O botão que inicia a execução do programa.
 
 ### 2.4 Modos de Execução
 
-Por facilidade, o programa pode ser executado em três "modos" diferentes, a depender dos arquivos de entrada inseridos em cada um dos campos. Trataremos abaixo a execução do programa em cada um desses modos:
+Por convenção, o programa pode ser executado em três "modos" diferentes, a depender dos arquivos de entrada inseridos em cada um dos campos. Trataremos abaixo a execução do programa em cada um desses modos:
 
 #### 2.4.1 Criação de Planilha de Prestação de Contas
 
