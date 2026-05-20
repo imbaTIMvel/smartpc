@@ -156,7 +156,7 @@ Inserindo apenas uma Planilha Base (no formato [standard_sheet](assets/standard_
 
 ## 3. Releases
 
-`v0.1.0` SmartPC (*beta release*)
+## `v0.1.0` SmartPC (*beta release*)
 
 > [!Warning]
 > O lançamento beta (*beta release*) foi desenvolvido para testes internos, visando identificar e corrigir bugs antes do lançamento de uma versão estável.
