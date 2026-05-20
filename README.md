@@ -16,7 +16,7 @@ Para uso da funcionalidade `Abrir planilha quando estiver pronta`, é recomendad
 
 ### 2.1 Baixando e Instalando o Programa
 
-Para usar o `SmartPC`, primeiro, você deve baixar o arquivo `.exe` disponível [aqui](link). Procure pela versão mais recente (*Latest*) e clique no arquivo .exe para fazer o download.
+Para usar o `SmartPC`, primeiro, você deve baixar o arquivo `.exe` disponível [aqui](https://github.com/imbaTIMvel/smartpc/releases). Procure pela versão mais recente (*Latest*) e clique no arquivo .exe para fazer o download.
 
 > [!Warning]
 > Caso você ainda tenha o executável de uma versão antiga do programa, recomenda-se excluí-lo.
@@ -161,7 +161,7 @@ Inserindo apenas uma Planilha Base (no formato [standard_sheet](assets/standard_
 
 Data de lançamento: `20/05/2026`
 
-Para fazer o download desta versão, clique [aqui](link).
+Para fazer o download desta versão, clique [aqui](https://github.com/imbaTIMvel/smartpc/releases/download/v0.1.0/SmartPC.exe).
 
 *Release* inicial do programa de criação de planilhas de Prestação de Contas p/ o time financeiro do Instituto Hardware BR - HBR.
 
@@ -176,7 +176,7 @@ Para fazer o download desta versão, clique [aqui](link).
   - `Adição de Folha de Rosto`: Apenas com Planilha Base;
 - Permite que o usuário escolha o diretório de salvamento para a planilha (.xlsx) de saída.
 
-Clique [aqui](link) para acessar o **changelog completo**.
+Clique [aqui](https://github.com/imbaTIMvel/smartpc/releases) para acessar o **changelog completo**.
 
 ## 4. Desenvolvimento
 
