@@ -1,0 +1,1 @@
+pyinstaller --name "SmartPC" --onefile --windowed --icon=smartpc.ico --add-data "smartpc.ico;." --add-data "bg_hbr.png;." --add-data "header.png;." --add-data "bottom.png;." --hidden-import xlrd smartpc.py
