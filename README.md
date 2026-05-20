@@ -46,7 +46,7 @@ O programa possui três campos para inserção de arquivos (planilhas Excel) de 
 
 | Campo         | Extensões de arquivo aceitas | Padronização do arquivo                                           | Aceita mais de um arquivo? |
 | ------------- | ---------------------------- | ----------------------------------------------------------------- | -------------------------- |
-| Planilha Base | .xlsx                        | [template_sheet](assets/template_sheet/template_sheet.xlsx)       | Não                        |
+| Planilha Base | .xlsx                        | [standard_sheet](assets/standard_sheet/standard_sheet.xlsx)       | Não                        |
 | Extrato CC    | .xlsx e .xls                 | Extratos CC do Itaú ou do Banco BRB                               | Não                        |
 | Relatório(s)  | .xlsx                        | Relatórios de Pagamentos e/ou Recebimentos, retirados do Octalink | Sim                        |
 
@@ -85,7 +85,7 @@ Por convenção, o programa pode ser executado em três "modos" diferentes, a de
 | Extrato CC         | Sim                  |
 | Relatório(s)       | Sim (pelo menos um)  |
 
-Inserindo um Extrato CC (do Itaú ou do Banco BRB) e ao menos um Relatório (de Pagamentos ou Recebimentos, do Octalink), ao clicar em `Gerar Planilha`, o programa deve gerar uma planilha no formato [template_sheet](assets/template_sheet/template_sheet.xlsx), com as colunas:
+Inserindo um Extrato CC (do Itaú ou do Banco BRB) e ao menos um Relatório (de Pagamentos ou Recebimentos, do Octalink), ao clicar em `Gerar Planilha`, o programa deve gerar uma planilha no formato [standard_sheet](assets/standard_sheet/standard_sheet.xlsx), com as colunas:
 - `Nº`: Contagem do item da planilha gerada, serve como referência para o espelhamento de dados na folha de rosto;
 - `RESUMO DO GASTO`: Preenchido com "-", deve ser preenchido posteriormente pelo usuário (operador);
 - `RUBRICA`: Retirado da coluna "Rubrica" do(s) Relatório(s) do Octalink;
@@ -122,7 +122,7 @@ Para associar adequadamente as informações entre o Extrato CC e o(s) Relatóri
 | Extrato CC         | Sim                  |
 | Relatório(s)       | Sim (pelo menos um)  |
 
-Inserindo uma Planilha Base (no formato [template_sheet](assets/template_sheet/template_sheet.xlsx)), um Extrato CC (do Itaú ou do Banco BRB) e ao menos um Relatório (de Pagamentos ou Recebimentos, do Octalink), ao clicar em `Gerar Planilha`, o programa deve adicionar as informações associadas e processadas do Extrato CC e do(s) Relatório(s) à base da Planilha Base, associando as colunas conforme a ordem da padronização [template_sheet](assets/template_sheet/template_sheet.xlsx), e preservando os dados da Planilha Base (inclusive anotações nas células abaixo da tabela em si). Adicionalmente, caso a Planilha Base não possua folha de rosto, o programa deve adicionar uma à planilha de saída.
+Inserindo uma Planilha Base (no formato [standard_sheet](assets/standard_sheet/standard_sheet.xlsx)), um Extrato CC (do Itaú ou do Banco BRB) e ao menos um Relatório (de Pagamentos ou Recebimentos, do Octalink), ao clicar em `Gerar Planilha`, o programa deve adicionar as informações associadas e processadas do Extrato CC e do(s) Relatório(s) à base da Planilha Base, associando as colunas conforme a ordem da padronização [standard_sheet](assets/standard_sheet/standard_sheet.xlsx), e preservando os dados da Planilha Base (inclusive anotações nas células abaixo da tabela em si). Adicionalmente, caso a Planilha Base não possua folha de rosto, o programa deve adicionar uma à planilha de saída.
 
 > [!Note]
 > Com os arquivos de entrada inseridos, ao clicar no botão `Gerar Planilha`, o programa deve fazer as correspondências entre o Extrato CC e o(s) Relatório(s) e emendar os dados novos à Planilha Base, gerando uma planilha de saída (com folha de rosto) e permitindo que o usuário escolha o local de salvamento do arquivo após o processamento.
@@ -141,7 +141,7 @@ Inserindo uma Planilha Base (no formato [template_sheet](assets/template_sheet/t
 | Extrato CC         | Não                  |
 | Relatório(s)       | Não                  |
 
-Inserindo apenas uma Planilha Base (no formato [template_sheet](assets/template_sheet/template_sheet.xlsx)) **SEM FOLHA DE ROSTO**, ao clicar em `Gerar Planilha`, o programa deve criar uma folha de rosto e adicioná-la à planilha de saída, mantendo os dados da Planilha Base inalterados.
+Inserindo apenas uma Planilha Base (no formato [standard_sheet](assets/standard_sheet/standard_sheet.xlsx)) **SEM FOLHA DE ROSTO**, ao clicar em `Gerar Planilha`, o programa deve criar uma folha de rosto e adicioná-la à planilha de saída, mantendo os dados da Planilha Base inalterados.
 
 > [!Note]
 > Com os arquivos de entrada inseridos, ao clicar no botão `Gerar Planilha`, o programa deve adicionar uma folha de rosto à Planilha Base, gerando uma planilha de saída (com folha de rosto e dados preservados) e permitindo que o usuário escolha o local de salvamento do arquivo após o processamento.
@@ -167,7 +167,7 @@ Para fazer o download desta versão, clique [aqui](link).
 
 **Features:**
 - Compatível com planilhas Excel, dos tipos:
-  - `Planilha Base`: Na padronização [template_sheet](assets/template_sheet/template_sheet.xlsx), no formato .xlsx;
+  - `Planilha Base`: Na padronização [standard_sheet](assets/standard_sheet/standard_sheet.xlsx), no formato .xlsx;
   - `Extrato CC`: Como exportados pelos bancos Itaú e BRB, nos formatos .xlsx ou .xls;
   - `Relatório(s)`: Relatórios de Pagamentos e/ou Relatórios de Recebimentos, conforme exportados pelo Octalink, no formato .xlsx;
 - Possui 3 (três) modos de operação, escolhidos de acordo com os arquivos de entrada inseridos:
