@@ -25,7 +25,7 @@ Baixado o programa, você pode colocar o arquivo `.exe` onde achar melhor.
 
 ### 2.2 Abrindo o Programa
 
-Feito isso, clique no arquivo .exe para abrir o programa.
+Feito isso, clique no arquivo `.exe` para abrir o programa.
 
 ![Tela inicial](assets/images/exe_in_downloads.png)
 
