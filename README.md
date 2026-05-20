@@ -73,4 +73,20 @@ Por convenção, o programa pode ser executado em três "modos" diferentes, a de
 
 [...]
 
-## 
+## 3. Releases
+
+[...]
+
+## 4. Desenvolvimento
+
+**Autor:**
+Timóteo Altoé (*handle*: [imbaTIMvel](github.com/imbaTIMvel))
+
+**Datas:**
+`29/04/2026` Início do projeto
+
+`05/05/2026` Lançamento da versão *alfa* - para testes internos
+
+`20/05/2026` Publicação da primeira versão oficial no GitHub
+
+`21/05/2026` Lançamento da versão *beta* - para testes
