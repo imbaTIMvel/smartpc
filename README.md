@@ -68,7 +68,7 @@ Ao clicar em `Remover`, se houver arquivo(s) selecionado(s) no campo corresponde
 
 #### 2.3.2 Demais Recursos
 
-![Interface do programa - superior](assets/tutorial/ui_02.png)
+![Interface do programa - inferior](assets/tutorial/ui_02.png)
 
 Além disso, o programa possui:
 - `Título PC`: Uma **caixa de texto** para inserir o título da Prestação de Contas (PC) que será usado para preencher a coluna "PC" na planilha de saída e a célula associada à "PC:" na folha de rosto;
