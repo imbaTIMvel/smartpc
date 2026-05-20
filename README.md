@@ -1,6 +1,6 @@
 # SmartPC
 
-Programa de criação de planilhas de Prestação de Contas p/ o time financeiro do HBR.
+Programa de criação de planilhas de Prestação de Contas p/ o time financeiro do Instituto Hardware BR - HBR.
 
 ![Logo do SmartPC](assets/icons/smartpc.ico)
 
@@ -95,15 +95,88 @@ Inserindo um Extrato CC (do Itaú ou do Banco BRB) e ao menos um Relatório (de 
 - `DATA DA NF`: Retirado da coluna "Emissão" do(s) Relatórios do Octalink;
 - `(número) NF/RECIBO`: Retirado da coluna "Nº Documento" do(s) Relatórios do Octalink;
 - `Nº EXTRATO`: Retirado da coluna "Numero Documento" ou "DOC" do Extrato CC;
-- `DATA DO PAGAMENTO`: Retirado da coluna "Data" ou "DATA" do Extrato CC. Deve bater com a coluna "Vencimento/Mov." 
+- `DATA DO PAGAMENTO`: Retirado da coluna "Data" ou "DATA" do Extrato CC. Faz-se a correspondência com a coluna "Vencimento/Mov." do(s) Relatórios do Octalink;
+- `VALOR PAGO`: Retirado da coluna "Valor R$" ou "Valor" do Extrato CC. Faz-se a correspondência com a coluna "Valor Total" do(s) Relatórios do Octalink. Imediatamente acima do nome da coluna, há uma célula com a soma dos itens;
+- `CÓD. PEDIDO`: Retirado da coluna "Cód. Pedido" do(s) Relatórios do Octalink;
+- `CÓD. RMS`: Retirado da coluna "Cód. Controle" do(s) Relatórios do Octalink;
+- `Mês_pagto`: Formatado como *mês/ano* a partir do dado inserido na coluna `DATA DO PAGAMENTO`;
+- `HISTÓRICO`: Retirado da coluna "Histórico" ou "Descrição" do Extrato CC. Faz-se a correspondência com a coluna "Histórico" do(s) Relatórios do Octalink;
+- `EXCEÇÕES DO ALGORITMO`: Erros do algoritmo em caso de não haver correspondências entre o Extrato CC e o(s) Relatório(s), ou em caso de haver múltiplas correspondências sem desempate por **histórico**.
 
 Para associar adequadamente as informações entre o Extrato CC e o(s) Relatório(s), o programa procura por correspondências de **valor** e **data**, recorrendo a desempate por **histórico** (como fallback) em casos de múltiplas ocorrências. Em caso de múltiplas correspondências (sem possibilidade de tratamento por **histórico**) ou nenhuma correspondência, o programa reporta os erros na coluna `EXCEÇÕES DO ALGORITMO`.
 
-[...]
+> [!Note]
+> Com os arquivos de entrada inseridos, ao clicar no botão `Gerar Planilha`, o programa deve fazer as correspondências entre o Extrato CC e o(s) Relatório(s), gerando uma planilha de saída (com folha de rosto) e permitindo que o usuário escolha o local de salvamento do arquivo após o processamento.
+
+![Gerando a planilha](assets/images/create_sheet_01.png)
+
+![Caixa de aviso](assets/images/create_sheet_02.png)
+
+![Salvando o arquivo](assets/images/create_sheet_03.png)
+
+#### 2.4.2 Emenda de Planilhas
+
+| Arquivo de Entrada | Deve ser adicionado? |
+| ------------------ | -------------------- |
+| Planilha Base      | Sim                  |
+| Extrato CC         | Sim                  |
+| Relatório(s)       | Sim (pelo menos um)  |
+
+Inserindo uma Planilha Base (no formato [template_sheet](assets/template_sheet/template_sheet.xlsx)), um Extrato CC (do Itaú ou do Banco BRB) e ao menos um Relatório (de Pagamentos ou Recebimentos, do Octalink), ao clicar em `Gerar Planilha`, o programa deve adicionar as informações associadas e processadas do Extrato CC e do(s) Relatório(s) à base da Planilha Base, associando as colunas conforme a ordem da padronização [template_sheet](assets/template_sheet/template_sheet.xlsx), e preservando os dados da Planilha Base (inclusive anotações nas células abaixo da tabela em si). Adicionalmente, caso a Planilha Base não possua folha de rosto, o programa deve adicionar uma à planilha de saída.
+
+> [!Note]
+> Com os arquivos de entrada inseridos, ao clicar no botão `Gerar Planilha`, o programa deve fazer as correspondências entre o Extrato CC e o(s) Relatório(s) e emendar os dados novos à Planilha Base, gerando uma planilha de saída (com folha de rosto) e permitindo que o usuário escolha o local de salvamento do arquivo após o processamento.
+
+![Gerando a planilha](assets/images/splice_sheet_01.png)
+
+![Caixa de aviso](assets/images/splice_sheet_02.png)
+
+![Salvando o arquivo](assets/images/splice_sheet_03.png)
+
+#### 2.4.3 Adição de Folha de Rosto
+
+| Arquivo de Entrada | Deve ser adicionado? |
+| ------------------ | -------------------- |
+| Planilha Base      | Sim                  |
+| Extrato CC         | Não                  |
+| Relatório(s)       | Não                  |
+
+Inserindo apenas uma Planilha Base (no formato [template_sheet](assets/template_sheet/template_sheet.xlsx)) **SEM FOLHA DE ROSTO**, ao clicar em `Gerar Planilha`, o programa deve criar uma folha de rosto e adicioná-la à planilha de saída, mantendo os dados da Planilha Base inalterados.
+
+> [!Note]
+> Com os arquivos de entrada inseridos, ao clicar no botão `Gerar Planilha`, o programa deve adicionar uma folha de rosto à Planilha Base, gerando uma planilha de saída (com folha de rosto e dados preservados) e permitindo que o usuário escolha o local de salvamento do arquivo após o processamento.
+
+![Gerando a planilha](assets/images/add_face_01.png)
+
+![Caixa de aviso](assets/images/add_face_02.png)
+
+![Salvando o arquivo](assets/images/add_face_03.png)
 
 ## 3. Releases
 
-[...]
+`v0.1.0` SmartPC (*beta release*)
+
+> [!Warning]
+> O lançamento beta (*beta release*) foi desenvolvido para testes internos, visando identificar e corrigir bugs antes do lançamento de uma versão estável.
+
+Data de lançamento: `20/05/2026`
+
+Para fazer o download desta versão, clique [aqui](link).
+
+*Release* inicial do programa de criação de planilhas de Prestação de Contas p/ o time financeiro do Instituto Hardware BR - HBR.
+
+**Features:**
+- Compatível com planilhas Excel, dos tipos:
+  - `Planilha Base`: Na padronização [template_sheet](assets/template_sheet/template_sheet.xlsx), no formato .xlsx;
+  - `Extrato CC`: Como exportados pelos bancos Itaú e BRB, nos formatos .xlsx ou .xls;
+  - `Relatório(s)`: Relatórios de Pagamentos e/ou Relatórios de Recebimentos, conforme exportados pelo Octalink, no formato .xlsx;
+- Possui 3 (três) modos de operação, escolhidos de acordo com os arquivos de entrada inseridos:
+  - `Criação de Planilha de Prestação de Contas`: Com Extrato CC e, no mínimo, um Relatório;
+  - `Emenda de Planilhas`: Com Planilha Base, Extrato CC e, no mínimo, um Relatório;
+  - `Adição de Folha de Rosto`: Apenas com Planilha Base;
+- Permite que o usuário escolha o diretório de salvamento para a planilha (.xlsx) de saída.
+
+Clique [aqui](link) para acessar o **changelog completo**.
 
 ## 4. Desenvolvimento
 
