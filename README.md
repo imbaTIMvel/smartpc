@@ -80,9 +80,11 @@ Por convenção, o programa pode ser executado em três "modos" diferentes, a de
 ## 4. Desenvolvimento
 
 **Autor:**
+
 Timóteo Altoé (*handle*: [imbaTIMvel](github.com/imbaTIMvel))
 
 **Datas:**
+
 `29/04/2026` Início do projeto
 
 `05/05/2026` Lançamento da versão *alfa* - para testes internos
