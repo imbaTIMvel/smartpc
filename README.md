@@ -10,7 +10,7 @@ Para uso adequado do programa, o usuário deve possuir:
 
 - Sistema Operacional: Windows 10 ou 11
 
-Para uso da funcionalidade `Abrir planilha quando estiver pronta`, é recomendável que o usuário possua o *Microsoft Excel* instalado na versão mais recente.
+Para uso da funcionalidade `Abrir planilha quando estiver pronta`, é recomendado que o usuário possua o *Microsoft Excel* instalado na versão mais recente.
 
 ## 2. Guia de Uso
 
