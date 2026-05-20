@@ -27,7 +27,7 @@ Baixado o programa, você pode colocar o arquivo `.exe` onde achar melhor.
 
 Feito isso, clique no arquivo `.exe` para abrir o programa.
 
-![Tela inicial](assets/tutorial/exe_in_downloads.png)
+![Abrindo o .exe](assets/tutorial/exe_in_downloads.png)
 
 > [!Warning]
 > É possível que o *Windows Defender* acuse o programa como "software perigoso". Neste caso, para executá-lo, você deve clicar em `Mais Informações` e, depois, no botão `Executar assim mesmo`.
@@ -54,11 +54,11 @@ Para cada um dos campos, há dois botões: `Selecionar` e `Remover`. Ao clicar e
 
 ![Seleção de arquivo](assets/tutorial/file_select_01.png)
 
-![Diálogo de seleção de arquivo](assets/tutorial/file_select_01.png)
+![Diálogo de seleção de arquivo](assets/tutorial/file_select_02.png)
 
 Após selecionar o(s) arquivo(s), o campo de arquivo inserido é atualizado.
 
-![Interface com arquivos selecionados](assets/tutorial/file_select_02.png)
+![Interface com arquivos selecionados](assets/tutorial/file_select_03.png)
 
 Ao clicar em `Remover`, se houver arquivo(s) selecionado(s) no campo correspondente, o programa remove o arquivo selecionado, deixando o campo vazio.
 
