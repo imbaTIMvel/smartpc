@@ -47,7 +47,7 @@ O programa possui três campos para inserção de arquivos (planilhas Excel) de 
 | Campo         | Extensões de arquivo aceitas | Padronização do arquivo                                           | Aceita mais de um arquivo? |
 | ------------- | ---------------------------- | ----------------------------------------------------------------- | -------------------------- |
 | Planilha Base | .xlsx                        | [standard_sheet](assets/standard_sheet/standard_sheet.xlsx)       | Não                        |
-| Extrato CC    | .xlsx e .xls                 | Extratos CC do Itaú ou do Banco BRB                               | Não                        |
+| Extrato CC    | .xlsx e .xls                 | Extratos CC do BB ou do Banco BRB                                 | Não                        |
 | Relatório(s)  | .xlsx                        | Relatórios de Pagamentos e/ou Recebimentos, retirados do Octalink | Sim                        |
 
 Para cada um dos campos, há dois botões: `Selecionar` e `Remover`. Ao clicar em `Selecionar`, o programa abre um diálogo do *Explorador de Arquivos*, permitindo que o usuário selecione o arquivo Excel correspondente ao campo (mais de um arquivo, se forem Relatórios).
@@ -170,7 +170,7 @@ Para fazer o download desta versão, clique [aqui](https://github.com/imbaTIMvel
 **Features:**
 - Compatível com planilhas Excel, dos tipos:
   - `Planilha Base`: Na padronização [standard_sheet](assets/standard_sheet/standard_sheet.xlsx), no formato .xlsx;
-  - `Extrato CC`: Como exportados pelos bancos Itaú e BRB, nos formatos .xlsx ou .xls;
+  - `Extrato CC`: Como exportados pelos bancos BB e BRB, nos formatos .xlsx ou .xls;
   - `Relatório(s)`: Relatórios de Pagamentos e/ou Relatórios de Recebimentos, conforme exportados pelo Octalink, no formato .xlsx;
 - Possui 3 (três) modos de operação, escolhidos de acordo com os arquivos de entrada inseridos:
   - `Criação de Planilha de Prestação de Contas`: Com Extrato CC e, no mínimo, um Relatório;
