@@ -16,7 +16,7 @@ Para uso da funcionalidade `Abrir planilha quando estiver pronta`, é recomendad
 
 ### 2.1 Baixando e Instalando o Programa
 
-Para usar o `SmartPC`, primeiro, você deve baixar o arquivo `.exe` disponível [aqui](https://github.com/imbaTIMvel/smartpc/releases). Procure pela versão mais recente (*Latest*) e clique no arquivo .exe para fazer o download.
+Para usar o `SmartPC`, primeiro, você deve baixar o arquivo `.exe` disponível [aqui](https://github.com/imbaTIMvel/smartpc/releases). Procure pela versão mais recente (*Latest*) e clique no arquivo `.exe` para fazer o download.
 
 > [!Warning]
 > Caso você ainda tenha o executável de uma versão antiga do programa, recomenda-se excluí-lo.
