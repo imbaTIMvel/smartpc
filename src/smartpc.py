@@ -4,8 +4,9 @@ from openpyxl.utils import get_column_letter
 from openpyxl.styles import Border, Side, Alignment, Font, PatternFill
 from openpyxl.drawing.image import Image
 from copy import copy
-import unicodedata, sys, os, subprocess
-from PyQt6.QtWidgets import (
+import sys, os
+import unicodedata, subprocess
+from PySide6.QtWidgets import (
     QApplication,
     QWidget,
     QPushButton,
@@ -19,8 +20,8 @@ from PyQt6.QtWidgets import (
     QFrame,
     QScrollArea
 )
-from PyQt6.QtGui import (QIcon, QPixmap)
-from PyQt6.QtCore import Qt
+from PySide6.QtGui import (QIcon, QPixmap, QPainter, QColor, QBrush)
+from PySide6.QtCore import (Qt, QRectF)
 
 base_file = None
 extrato_file = None
@@ -1766,9 +1767,6 @@ class ToggleSwitch(QCheckBox):
 
     def paintEvent(self, event):
 
-        from PyQt6.QtGui import QPainter, QColor, QBrush
-        from PyQt6.QtCore import QRectF
-
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
 
@@ -1832,7 +1830,7 @@ github_label = QLabel()
 github_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
 github_label.setText(
-    '<a href="https://github.com/imbaTIMvel/juntapdf">'
+    '<a href="https://github.com/imbaTIMvel/smartpc">'
     'SmartPC v0.1.0 - GitHub'
     '</a>'
 )
